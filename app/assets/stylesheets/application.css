@@ -28,8 +28,9 @@
 
 /*Style Logo*/
 .title-area a{ padding:0 !important; }
-.title-area  img{
-    width:30px;
+.title-area  i{
+    font-size:30px;
     position:relative;
-    top:-6px;
+    top:2px;
+    /*color: #43ac6a;*/
   }

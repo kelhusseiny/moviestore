@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "MovieStore - Online movies" %></title>
-    <link rel="shortcut icon" href="<%=asset_path('logo.png')%>" >
+    <link rel="shortcut icon" href="<%=asset_path("logo.png")%>" >
 
 
     <%= stylesheet_link_tag "application" %>
@@ -20,7 +20,7 @@
           <li class="name">
             <h1>
               <a href="/">
-                <%=image_tag asset_path("logo.png") %> MovieStore
+                <i class="fi-play-video"></i> MovieStore
               </a>
             </h1>
           </li>
