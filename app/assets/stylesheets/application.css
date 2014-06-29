@@ -15,3 +15,21 @@
  *= require foundation_and_overrides
 
  */
+
+/*Default font family*/
+@font-face {
+    font-family: 'gotham-rounded';
+    src: url(gotham-rounded-medium.otf);
+}
+
+/*Set min height for main-content*/
+.full-min-height{ min-height: 74%; }
+
+
+/*Style Logo*/
+.title-area a{ padding:0 !important; }
+.title-area  img{
+    width:30px;
+    position:relative;
+    top:-6px;
+  }

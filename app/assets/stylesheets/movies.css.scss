@@ -1,3 +1,21 @@
-// Place all the styles related to the movies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Index page style
+.movies-grid{
+  .movie-card{
+    width:220px;
+    margin:auto;
+    padding: 20px 0;
+
+    .poster img{
+      height: 300px;
+      width:100%;
+    }
+
+    .movie-info{
+      background-color: rgba(0,0,0,0.2);
+      padding: 10px 12px 20px 12px;
+      overflow: hidden;
+
+      .title{height: 50px;}
+    }
+  }
+}

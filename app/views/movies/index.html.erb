@@ -1,35 +1,23 @@
-<h1>Listing movies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Release year</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Imdb</th>
-      <th>Poster url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h4 class='column'>Featured Movies</h4>
+<div class="column">
+  <ul class='movies-grid no-bullet row'>
     <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.release_year %></td>
-        <td><%= movie.price %></td>
-        <td><%= movie.description %></td>
-        <td><%= movie.imdb_id %></td>
-        <td><%= movie.poster_url %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li class='large-3 medium-4 small-12 column'>
+        <div class="movie-card">
+          <%=link_to movie, class: "poster" do%>
+            <%=image_tag movie.poster%>
+          <%end%>
+          <div class="movie-info">
+            <div class="title">
+              <h6><%= movie.title %> <span>(<%= movie.release_year %>)</span></h6>
+            </div>
+            <p class="left price label secondary">$ <%=movie.price%></p>
+            <%=link_to movie.imdb, class: "right" do%>
+              <%=image_tag asset_path("imdb_logo.png")%>
+            <%end%>
+          </div>
+        </div>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Movie', new_movie_path %>
+  </ul>
+</div>

@@ -4,16 +4,64 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "MovieStore - Online movies" %></title>
+    <link rel="shortcut icon" href="<%=asset_path('logo.png')%>" >
 
-    <%= stylesheet_link_tag    "application" %>
+
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <div class="row">
+      <nav class="top-bar column" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1>
+              <a href="/">
+                <%=image_tag asset_path("logo.png") %> MovieStore
+              </a>
+            </h1>
+          </li>
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+        </ul>
 
-    <%= yield %>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li class="has-form">
+              <div class="row collapse">
+                <div class="large-8 small-9 columns">
+                  <input type="text" placeholder="Find Movie">
+                </div>
+                <div class="large-4 small-3 columns">
+                  <a href="#" class="success button expand">Search</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </nav>
+    </div>
+    <div id="main-content" class="row full-min-height">
+      <%= yield %>
+    </div>
+
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr>
+        <p>© MovieStore 2014</p>
+      </div>
+    </footer>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>
