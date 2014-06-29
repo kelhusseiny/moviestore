@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140628145105) do
   create_table "movies", force: true do |t|
     t.string   "title"
     t.integer  "release_year"
-    t.decimal  "price",        precision: 10, scale: 0
+    t.float    "price"
     t.text     "description"
     t.string   "imdb_id"
     t.string   "poster_url"

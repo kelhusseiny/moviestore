@@ -3,7 +3,7 @@ class CreateMovies < ActiveRecord::Migration
     create_table :movies do |t|
       t.string :title
       t.integer :release_year
-      t.decimal :price
+      t.float :price
       t.text :description
       t.string :imdb_id
       t.string :poster_url
