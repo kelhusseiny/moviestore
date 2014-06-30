@@ -61,9 +61,9 @@
 
 // We use these as default colors throughout
 $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
+
 // $alert-color: #f04124;
-$success-color: #43AC6A;
+$success-color: #ACA843;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
@@ -1186,7 +1186,7 @@ $label-font-sizing: rem-calc(14);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $body-bg;
+$topbar-bg-color: rgba(255, 255, 255, 0);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1217,7 +1217,7 @@ $topbar-title-font-size: rem-calc(25);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
  $topbar-link-bg-hover: $success-color;
- $topbar-link-bg-active: $success-color;
+// $topbar-link-bg-active: $success-color;
  $topbar-link-bg-active-hover: scale-color($success-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;

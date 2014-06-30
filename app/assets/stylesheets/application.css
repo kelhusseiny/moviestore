@@ -34,3 +34,7 @@
     top:2px;
     /*color: #43ac6a;*/
   }
+
+body {
+  background-image:url(body_bg.png);
+}
