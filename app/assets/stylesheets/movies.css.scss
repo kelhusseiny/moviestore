@@ -4,45 +4,21 @@
     width:220px;
     margin:auto;
     padding: 20px 0;
-
     .poster img {
-      height: 300px;
+      height: 325px;
       width:100%;
     }
-
     .movie-info {
       background-color: rgba(0, 0, 0, 0.2);
       padding: 10px 12px 20px 12px;
       overflow: hidden;
       border-radius: 3px;
-
       .title {height: 50px;}
+      .price {
+        background-color: #3D3D32;
+        color: #FFCC00;
+        border-radius: 20px;
+      }
     }
   }
 }
-
-.label.secondary {
-  background-color: #3D3D32;
-  color: #FFCC00;
-  border-radius: 20px;
-}
-
-input[type=text] {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 20px;
-  padding: 5px 8px;
-  color: #616161;
-  box-shadow: inset 0 2px 0 rgba(0,0,0,.2), 0 0 4px rgba(0,0,0,0.1);
-  padding-top: 8px;
-  width: 175px;
-}
-
-input::-webkit-input-placeholder {
-    color: #616161;
-}
-
-.top-bar-section ul li {
-  background: transparent;
-}
-
