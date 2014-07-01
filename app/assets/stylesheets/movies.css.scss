@@ -3,22 +3,12 @@
   .movie-card {
     width:220px;
     margin:auto;
-    padding: 20px 0;
     .poster img {
       height: 325px;
       width:100%;
     }
     .movie-info {
-      background-color: rgba(0, 0, 0, 0.2);
-      padding: 10px 12px 20px 12px;
-      overflow: hidden;
-      border-radius: 3px;
-      .title {height: 50px;}
-      .price {
-        background-color: #3D3D32;
-        color: #FFCC00;
-        border-radius: 20px;
-      }
+      .title { height: 4em; }
     }
   }
 }

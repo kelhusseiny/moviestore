@@ -1,30 +1,41 @@
-// Custom layout styles and Foundation overrides
+// Custom layout styles
 
-/* Set min height for main-content */
-.full-min-height{ min-height: 74%; }
-
-/* Topbar style */
-.title-area a { padding:0 !important; }
-.title-area  i {
-  font-size:30px;
-  position:relative;
-  top:2px;
+// Default font family
+@font-face {
+  font-family: 'gotham-rounded';
+  src: url(gotham-rounded-medium.otf);
 }
 
-.label.secondary {
-  background-color: #3D3D32;
-  color: #FFCC00;
-  border-radius: 20px;
+// Body background
+body {
+  background-image: url(body_bg.png);
+  background-position: center;
+  color: #fff;
 }
 
-input[type=text] {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 20px;
-  color: #616161;
-  width: 175px;
+// Logo
+.title-area{
+  a { padding:0 !important }
+  i {
+    font-size: 30px;
+    position: relative;
+    top: 2px;
+  }
 }
 
-input::-webkit-input-placeholder { color: #616161; }
+// Topbar items
+.top-bar-section ul li { background: transparent }
 
-.top-bar-section ul li { background: transparent; }
+// Forms
+.form-container {
+  padding: 3% 3%;
+  border-radius: 10px;
+  a {
+    color: #ddd;
+    &:hover { color: #fff }
+  }
+  .switch > div {
+    position: relative;
+    top: -5px;
+  }
+}

@@ -3,18 +3,18 @@
   <ul class="movies-grid no-bullet row">
     <% @movies.each do |movie| %>
       <li class="large-3 medium-4 small-12 column">
-        <div class="movie-card">
-          <%=link_to movie, class: "poster" do%>
-            <%=image_tag movie.poster%>
-          <%end%>
-          <div class="movie-info">
+        <div class="movie-card padly">
+          <%= link_to movie, class: "poster" do %>
+            <%= image_tag movie.poster %>
+          <% end %>
+          <div class="movie-info ell glassy-bg padmy padlx">
             <div class="title">
               <h6><%= movie.title %> <span>(<%= movie.release_year %>)</span></h6>
             </div>
-            <p class="left price label secondary">$ <%=movie.price%></p>
-            <%=link_to movie.imdb, class: "right" do%>
-              <%=image_tag asset_path("imdb_logo.png")%>
-            <%end%>
+            <p class="left price label movie-label radius">$ <%= movie.price %></p>
+            <%= link_to movie.imdb, class: "right" do %>
+              <%= image_tag asset_path("imdb_logo.png") %>
+            <% end %>
           </div>
         </div>
       </li>

@@ -11,6 +11,7 @@
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
+@import "foundation/components/labels";
 
 // $experimental: true;
 
@@ -45,9 +46,9 @@
 // $font-weight-bold: bold !default
 
 // We use these to control various global styles
- $body-bg: #384047;
- $body-font-color: #fff;
- $body-font-family: "gotham-rounded", "Helvetica", Helvetica, Arial, sans-serif;
+$body-bg: #384047;
+$body-font-color: #fff;
+$body-font-family: "gotham-rounded", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -60,10 +61,10 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #008CBA;
+$primary-color: #B18806;
 
 // $alert-color: #f04124;
-$success-color: #ACA843;
+// $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
@@ -127,7 +128,7 @@ $success-color: #ACA843;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
- $header-font-color: #fff;
+$header-font-color: #fff;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -345,7 +346,7 @@ $success-color: #ACA843;
 // We use these to build padding for buttons.
 // $button-tny: rem-calc(10);
 // $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
+$button-med: rem-calc(10);
 // $button-lrg: rem-calc(18);
 
 // We use this to control the display property.
@@ -529,7 +530,7 @@ $success-color: #ACA843;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
-// $input-bg-color: #fff;
+$input-bg-color: #E6E6E6;
 // $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
 // $input-border-color: scale-color(#fff, $lightness: -20%);
 // $input-focus-border-color: scale-color(#fff, $lightness: -40%);
@@ -665,9 +666,14 @@ $label-padding: rem-calc(5 15);
 // We use these to style the label text
 $label-font-sizing: rem-calc(14);
 // $label-font-weight: $font-weight-normal;
-// $label-font-color: #333;
+// $label-font-color: #000;
 // $label-font-color-alt: #fff;
 // $label-font-family: $body-font-family;
+
+.movie-label { 
+  @include label( $text-size:13px, $bg: #3D3D32 );
+  color: gold;
+}
 
 // Magellan
 
@@ -1056,6 +1062,8 @@ $label-font-sizing: rem-calc(14);
 // $switch-border-width: 1px;
 // $switch-bg: #fff;
 
+$switch-active-color: $primary-color;
+
 // We use these to control the switch heights for our default classes
 // $switch-height-tny: 22px;
 // $switch-height-sml: 28px;
@@ -1190,8 +1198,8 @@ $topbar-bg-color: rgba(255, 255, 255, 0);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
- $topbar-height: 45px;
- $topbar-margin-bottom: 30px;
+$topbar-height: 45px;
+$topbar-margin-bottom: 30px;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
@@ -1216,12 +1224,12 @@ $topbar-title-font-size: rem-calc(25);
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
- $topbar-link-bg-hover: $success-color;
+$topbar-link-bg-hover: $primary-color;
 // $topbar-link-bg-active: $success-color;
- $topbar-link-bg-active-hover: scale-color($success-color, $lightness: -14%);
+$topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
- $topbar-link-padding: $topbar-height / 3;
+$topbar-link-padding: $topbar-height / 3;
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;

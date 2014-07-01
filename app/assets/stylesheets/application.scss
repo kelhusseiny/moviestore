@@ -13,13 +13,4 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
-
-/*Default font family*/
-@font-face {
-  font-family: 'gotham-rounded';
-  src: url(gotham-rounded-medium.otf);
-}
-
-body { background-image:url(body_bg.png); }
