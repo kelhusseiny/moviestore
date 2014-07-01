@@ -1,0 +1,30 @@
+// Custom layout styles and Foundation overrides
+
+/* Set min height for main-content */
+.full-min-height{ min-height: 74%; }
+
+/* Topbar style */
+.title-area a { padding:0 !important; }
+.title-area  i {
+  font-size:30px;
+  position:relative;
+  top:2px;
+}
+
+.label.secondary {
+  background-color: #3D3D32;
+  color: #FFCC00;
+  border-radius: 20px;
+}
+
+input[type=text] {
+  background-color: #E6E6E6;
+  border: none;
+  border-radius: 20px;
+  color: #616161;
+  width: 175px;
+}
+
+input::-webkit-input-placeholder { color: #616161; }
+
+.top-bar-section ul li { background: transparent; }

@@ -23,24 +23,3 @@
 }
 
 body { background-image:url(body_bg.png); }
-
-/* Set min height for main-content */
-.full-min-height{ min-height: 74%; }
-
-/* Topbar style */
-.title-area a { padding:0 !important; }
-.title-area  i {
-  font-size:30px;
-  position:relative;
-  top:2px;
-}
-.top-bar-section ul li { background: transparent; }
-
-/* Input style */
-input[type=text] {
-  background-color: #E6E6E6;
-  border: none;
-  border-radius: 20px;
-  color: #616161;
-  width: 175px;
-}
