@@ -31,8 +31,13 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Login</a></li>
+            <%if signed_in?%>
+              <li><%=link_to current_user.email, edit_user_registration_path%></li>
+              <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
+            <%else%>
+              <li><%=link_to "Register", new_user_registration_path%></li>
+              <li><%=link_to "Login", new_user_session_path%></li>
+            <%end%>
           </ul>
 
           <!-- Left Nav Section -->
@@ -48,6 +53,8 @@
         </section>
       </nav>
     </div>
+
+    <%= render "layouts/alerts" %>
     <div id="main-content" class="row full-min-height">
       <%= yield %>
     </div>
