@@ -1,0 +1,34 @@
+// Custom layout styles and Foundation overrides
+
+/* Default font family */
+@font-face {
+  font-family: 'gotham-rounded';
+  src: url(gotham-rounded-medium.otf);
+}
+
+body { 
+  background-image: url(body_bg.png);
+  background-position: center;
+  color: white;
+}
+
+// Topbar style
+.title-area a { padding:0 !important; }
+.title-area  i {
+  font-size: 30px;
+  position: relative;
+  top: 2px;
+}
+
+.form-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4% 4%;
+  border-radius: 10px;
+
+  a {
+    color: #CACACA;
+    &:hover { color: #ACACAC; }
+  }
+}
+
+.top-bar-section ul li { background: transparent; }

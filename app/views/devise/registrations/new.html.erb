@@ -1,18 +1,16 @@
-<h2>Register</h2>
+<div class="form-container small-10 small-centered medium-8 large-6 columns">
+  <h2>Register</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <div class="mb1"><%= f.email_field :email, autofocus: true, placeholder: "Email", class: "radius" %></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+    <div class="mb1"><%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "radius" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    <div class="mb1"><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password", class: "radius" %></div>
 
-  <div><%= f.submit "Let's Go" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div><%= f.submit "Let's Go", class: "button" %></div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
