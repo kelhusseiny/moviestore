@@ -34,7 +34,7 @@
             <%if signed_in?%>
               <li>
                 <%= link_to cart_path do%>
-                  <i class="fi-shopping-cart"></i> My Cart (<span>0</span>)
+                  <i class="fi-shopping-cart"></i> My Cart (<span class="cart-count"><%=current_user.cart_count%></span>)
                 <%end%>
                 </li>
               <li><%=link_to current_user.email, edit_user_registration_path%></li>

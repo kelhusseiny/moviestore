@@ -2,21 +2,21 @@
   <%=image_tag @movie.poster%>
 </div>
 <div class="large-9 small-12 column">
-  <h2>
+  <h3>
     <%= @movie.title %>
+    (<%= @movie.release_year %>)
     <%=link_to @movie.imdb do%>
       <%=image_tag asset_path("imdb_logo.png")%>
     <%end%>
-  </h2>
-
-  <p>(<%= @movie.release_year %>)</p>
+  </h3>
+  <p class="label movie-label radius mb1">$ <%= @movie.price %></p>
 
   <p><%= @movie.description %></p>
 
-  <p class="label movie-label radius">$ <%= @movie.price %></p>
-
   <div class="mt1">
-    <a href="#"><i class="fi-shopping-cart"></i> Add to Cart</a>
+    <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do%>
+      <i class="fi-shopping-cart"></i>
+      <span><%=@cart_action%></span> Cart
+    <%end%>
   </div>
-
 </div>

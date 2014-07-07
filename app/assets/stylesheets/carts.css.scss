@@ -1,3 +1,12 @@
-// Place all the styles related to the carts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#mycart {
+  .scale {
+    position: relative;
+    top: 35%;
+    transform: translateY(-35%);
+  }
+  .fi-x {
+    position: relative;
+    top: 10px;
+    right: -5px;
+  }
+}

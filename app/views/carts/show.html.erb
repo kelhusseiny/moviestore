@@ -1,24 +1,23 @@
+<div id="mycart" class="small-10 small-centered medium-8 large-8 column">
+  <div class="p1 glassy-bg mb1 text-center radius-l1 radius-r1">
+    <h4>My Cart</h4>
+    <p class="mb0"> You've selected <span class="cart-count"><%=current_user.cart_count%></span> movies!</p>
+  </div>
 
-<div class="small-10 small-centered medium-8 large-8 column">
-
-<h4 class="text-center column mb1">My Cart</h4>
-
-<% @cart_movies.each do |movie|%>
-<div data-equalizer class='large-12 column mb1'>
-  <div class="column large-9 glassy-bg p1 radius-l1" data-equalizer-watch>
-    <div class="large-2 column text-center">
-      <%=image_tag movie.poster, width: 100 %>
+  <% @cart_movies.each do |movie|%>
+  <div data-equalizer class="cart-movie large-12 column mb1">
+    <div class="column large-2 text-center p0" data-equalizer-watch>
+      <%=image_tag movie.poster, class: "radius-l1"%>
     </div>
-    <div class="large-8 column pt1 text-center">
-      <p> <%= movie.title %> </p>
+    <div class="column large-7 glassy-bg text-center" data-equalizer-watch>
+        <p class="scale ptm"> <%= movie.title %> </p>
     </div>
-    <div class="large-2 column text-center ptm">
-      <a href="#"><i class="fi-x"></i> remove</a>
+    <div class="column large-3 primary-bg text-center radius-r1" data-equalizer-watch>
+      <%=link_to "" , data: {targetUrl: remove_from_cart_path(movie)} do%>
+        <i class="fi-x right"></i>
+      <%end%>
+      <h4 class="scale">$ <%= movie.price %></h4>
     </div>
   </div>
-  <div class="column large-3 p0 primary-bg text-center pt1 radius-r1" data-equalizer-watch>
-    <h4 class="ptm">$ <%= movie.price %></h4>
-  </div>
-</div>
-<%end%>
+  <%end%>
 </div>
