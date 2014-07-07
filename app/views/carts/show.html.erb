@@ -1,0 +1,24 @@
+
+<div class="small-10 small-centered medium-8 large-8 column">
+
+<h4 class="text-center column mb1">My Cart</h4>
+
+<% @cart_movies.each do |movie|%>
+<div data-equalizer class='large-12 column mb1'>
+  <div class="column large-9 glassy-bg p1 radius-l1" data-equalizer-watch>
+    <div class="large-2 column text-center">
+      <%=image_tag movie.poster, width: 100 %>
+    </div>
+    <div class="large-8 column pt1 text-center">
+      <p> <%= movie.title %> </p>
+    </div>
+    <div class="large-2 column text-center ptm">
+      <a href="#"><i class="fi-x"></i> remove</a>
+    </div>
+  </div>
+  <div class="column large-3 p0 primary-bg text-center pt1 radius-r1" data-equalizer-watch>
+    <h4 class="ptm">$ <%= movie.price %></h4>
+  </div>
+</div>
+<%end%>
+</div>

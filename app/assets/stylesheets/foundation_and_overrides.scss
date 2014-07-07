@@ -180,8 +180,8 @@ $header-font-color: #fff;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: #ddd;
+$anchor-font-color-hover: #fff;
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
@@ -670,7 +670,7 @@ $label-font-sizing: rem-calc(14);
 // $label-font-color-alt: #fff;
 // $label-font-family: $body-font-family;
 
-.movie-label { 
+.movie-label {
   @include label( $text-size:13px, $bg: #3D3D32 );
   color: gold;
 }

@@ -32,6 +32,11 @@
           <!-- Right Nav Section -->
           <ul class="right">
             <%if signed_in?%>
+              <li>
+                <%= link_to cart_path do%>
+                  <i class="fi-shopping-cart"></i> My Cart (<span>0</span>)
+                <%end%>
+                </li>
               <li><%=link_to current_user.email, edit_user_registration_path%></li>
               <li><%=link_to "Logout", destroy_user_session_path, method: :delete%></li>
             <%else%>
@@ -45,10 +50,10 @@
             <li class="has-form">
               <div class="row collapse">
                 <div class="large-8 small-9 columns">
-                  <input type="text" class="radius-left expand" placeholder="Find Movie">
+                  <input type="text" class="radius-ls expand" placeholder="Find Movie">
                 </div>
                 <div class="large-4 small-3 columns">
-                  <a href="#" class=" radius-right button">Search</a>
+                  <a href="#" class=" radius-rs button">Search</a>
                 </div>
               </div>
             </li>
