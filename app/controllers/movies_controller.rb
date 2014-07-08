@@ -10,7 +10,7 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
-    @cart_action = @movie.cart_action(current_user.id)
+    @cart_action = @movie.cart_action current_user.try :id
   end
 
   private

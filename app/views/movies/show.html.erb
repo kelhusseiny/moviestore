@@ -13,10 +13,10 @@
 
   <p><%= @movie.description %></p>
 
-  <div class="mt1">
+  <%if signed_in?%>
     <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do%>
       <i class="fi-shopping-cart"></i>
       <span><%=@cart_action%></span> Cart
     <%end%>
-  </div>
+  <%end%>
 </div>
