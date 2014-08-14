@@ -14,4 +14,26 @@
   <p><%= @movie.description %></p>
 
   <p class="label movie-label radius">$ <%= @movie.price %></p>
+
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @movie, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Visual Effects: <%= rating_for @movie, "visual_effects", disable_after_rate: true, imdb_avg: true %>
+      <br>
+      Visual Effects: <%= rating_for_user @movie, current_user, "visual_effects" %>
+      <br>
+      Original Score: <%= rating_for @movie, "original_score", target: '#nrea', targetScore: '#nrea', single: true %>
+      <br>
+      Director: <%= rating_for @movie, "original_score" %>
+      <br>
+      Custome Design: <%= rating_for @movie, "custome_design" %>
+    <% end %>
+  </div>
+  <div id="rea"></div>
+  <div id="nrea"></div>
+</div>
 </div>
