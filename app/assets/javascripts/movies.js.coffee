@@ -1,8 +1,8 @@
-$(window).load ->
+$ ->
   $('a[data-target]').click (e) ->
     e.preventDefault()
     $this = $(this)
-    if $this.data('target') == 'Add to'
+    if $this.data('target') is 'Add to'
       url = $this.data('addurl')
       new_target = "Remove from"
     else

@@ -1,4 +1,4 @@
-$(window).load ->
+$ ->
   $('#mycart .fi-x').click (e) ->
     e.preventDefault()
     $this = $(this).closest('a')
