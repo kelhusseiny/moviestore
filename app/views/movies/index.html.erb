@@ -11,7 +11,9 @@
             <div class="title">
               <h6><%= movie.title %> <span>(<%= movie.release_year %>)</span></h6>
             </div>
-            <p class="left price label movie-label radius">$ <%= movie.price %></p>
+            <p class="left price label movie-label radius">
+              <%= (current_user && current_user.purchase?(movie)) ? "Purchased" : "$#{movie.price}" %>
+            </p>
             <%= link_to movie.imdb, class: "right" do %>
               <%= image_tag asset_path("imdb_logo.png") %>
             <% end %>

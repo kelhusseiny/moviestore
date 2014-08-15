@@ -9,14 +9,23 @@
       <%=image_tag asset_path("imdb_logo.png")%>
     <%end%>
   </h3>
-  <p class="label movie-label radius mb1">$ <%= @movie.price %></p>
+
+    <p class="label movie-label radius mb1">
+      <%= (current_user && current_user.purchase?(@movie)) ? "Purchased" : "$#{@movie.price}" %>
+    </p>
 
   <p><%= @movie.description %></p>
 
   <%if signed_in?%>
-    <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do%>
-      <i class="fi-shopping-cart"></i>
-      <span><%=@cart_action%></span> Cart
+    <%if current_user.purchase? @movie %>
+      <div class="flex-video">
+        <iframe width="100%" height="" src="<%= @movie.video_url %>" frameborder="0" allowfullscreen></iframe>
+      </div>
+    <%else%>
+      <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do%>
+        <i class="fi-shopping-cart"></i>
+        <span><%=@cart_action%></span> Cart
+      <%end%>
     <%end%>
   <%end%>
 </div>

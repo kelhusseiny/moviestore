@@ -11,18 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701125957) do
+ActiveRecord::Schema.define(version: 20140814191525) do
 
   create_table "movies", force: true do |t|
     t.string   "title"
     t.integer  "release_year"
-    t.float    "price"
+    t.float    "price",        limit: 24
     t.text     "description"
     t.string   "imdb_id"
     t.string   "poster_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "video_url"
   end
+
+  create_table "purchases", force: true do |t|
+    t.integer  "movie_id"
+    t.integer  "buyer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["movie_id", "buyer_id"], name: "index_purchases_on_movie_id_and_buyer_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -37,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140701125957) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "braintree_customer_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

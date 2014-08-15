@@ -1,25 +1,29 @@
-<div id="mycart" class="small-10 small-centered medium-8 large-8 column">
+<div id="mycart" class="small-10 small-centered medium-8 large-8 column text-center">
+
   <div class="p1 glassy-bg mb1 text-center radius-l1 radius-r1">
     <h4>My Cart</h4>
     <p class="mb0"> You've selected <span class="cart-count"><%=current_user.cart_count%></span> movies!</p>
   </div>
 
   <% @cart_movies.each do |movie|%>
-  <div data-equalizer class="cart-movie large-12 column mb1">
-    <div class="column large-2 text-center p0" data-equalizer-watch>
-      <%=link_to movie do%>
-        <%=image_tag movie.poster, class: "radius-l1"%>
-      <%end%>
+    <div data-equalizer class="cart-movie large-12 column mb1">
+      <div class="column large-2 text-center p0" data-equalizer-watch>
+        <%=link_to movie do%>
+          <%=image_tag movie.poster, class: "radius-l1"%>
+        <%end%>
+      </div>
+      <div class="column large-7 glassy-bg text-center" data-equalizer-watch>
+          <p class="scale ptm"> <%= movie.title %> </p>
+      </div>
+      <div class="column large-3 primary-bg text-center radius-r1" data-equalizer-watch>
+        <%=link_to "" , data: {targetUrl: remove_from_cart_path(movie)} do%>
+          <i class="fi-x right"></i>
+        <%end%>
+        <h4 class="scale">$ <%= movie.price %></h4>
+      </div>
     </div>
-    <div class="column large-7 glassy-bg text-center" data-equalizer-watch>
-        <p class="scale ptm"> <%= movie.title %> </p>
-    </div>
-    <div class="column large-3 primary-bg text-center radius-r1" data-equalizer-watch>
-      <%=link_to "" , data: {targetUrl: remove_from_cart_path(movie)} do%>
-        <i class="fi-x right"></i>
-      <%end%>
-      <h4 class="scale">$ <%= movie.price %></h4>
-    </div>
-  </div>
   <%end%>
+
+  <%=link_to "Checkout", new_transaction_path, class: "button" unless current_user.get_cart_movies.blank?%>
+
 </div>

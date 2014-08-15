@@ -1,0 +1,10 @@
+<div class="form-container radius-box glassy-bg small-10 small-centered medium-8 large-6 columns">
+  <h2 class="mbs">New Transaction</h2>
+  <p>Please enter your payment details:</p>
+  <%= form_tag transactions_path do%>
+    <div id="dropin"></div>
+    <%=submit_tag "Pay #{current_user.cart_total_price}$", class: "button mt1" %>
+  <%end%>
+</div>
+
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
