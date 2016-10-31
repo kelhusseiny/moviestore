@@ -24,7 +24,7 @@ gem 'devise'
 # Advanced key-value store
 gem 'redis', '~> 3.0.1'
 # Redis driver
-gem 'hiredis'
+gem "hiredis", "~> 0.6.0"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring', group: :development
 
